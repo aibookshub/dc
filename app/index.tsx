@@ -1,16 +1,23 @@
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 import 'expo-dev-client';
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit a ppn.</Text>
-    </View>
-  );
+    const router = useRouter();
+
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <TouchableOpacity onPress={() => router.push("/sse")}>
+                <Text style={{ color: "blue", textDecorationLine: "underline" }}>
+                    Click to open SEE
+                </Text>
+            </TouchableOpacity>
+        </View>
+    );
 }
